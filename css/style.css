@@ -1,0 +1,126 @@
+@font-face {
+    font-family: "Avergent";
+    src: url("../fonts/Avergent-Regular-Personal-Use.ttf");
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    font-family: 'Avergent', sans-serif;
+}
+
+*:where(i, li, label){
+    cursor: pointer;
+}
+
+.wrapper {
+    width: 19.0625rem;
+    padding: 1.25rem 0;
+    border-radius: 0.5rem;
+    background-color: #FFF;
+}
+
+.wrapper h1 {
+    margin-bottom: 0.9375rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.add-item {
+    position: relative;
+    height: 3.125rem;
+    padding: 0 1.5625rem;
+}
+
+.add-item input {
+    height: 100%;
+    width: 100%;
+    padding: 0 1.25rem 0 3.3125rem;
+    outline: none;
+    border: 0.0625rem solid #999;
+    border-radius: 0.3125rem;
+}
+
+.add-item input::placeholder {
+    color: #999;
+    font-size: 0.875rem;
+    letter-spacing: 0.0375rem;
+}
+
+.add-item i {
+    z-index: 999;
+    position: absolute;
+    top: 28%;
+    left: 13.5%;
+    font-size: 1.5rem;
+}
+
+.null {
+    display: flex;
+    color: #999;
+    text-align: center;
+    font-size: 0.875rem;
+    letter-spacing: 0.0375rem;
+    line-height: 1.25rem;
+}
+
+.item-list {
+    max-height: 18.75rem;
+    margin-top: 1.25rem;
+    margin-right: 0.3125rem;
+    padding: 0 1.5625rem 0.625rem;
+    overflow-y: scroll;
+}
+
+.item-list .item {
+    display: flex;
+    margin-bottom: 1.125rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.0625rem solid #ccc;
+}
+
+.item-list .item:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.item p {
+    margin-left: 1.625rem;
+}
+
+.item label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.item label p.checked {
+    position: relative;
+    color: #999;
+    transition: color .3s;
+}
+
+label p.checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0.0625rem;
+    opacity: .4;
+    text-decoration: line-through;
+    background: rgb(53, 53, 53);
+    animation: line .2s linear  1  forwards;
+}
+
+@keyframes line {
+    0%   { width : 0; }
+    100% { width: 100%; }
+}
